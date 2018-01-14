@@ -1,0 +1,36 @@
+.CompanyProfile-Container {
+  width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.CompanyProfile-Title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CompanyProfile-Description {
+  padding: 20px;
+  border-top: 1px solid #c1c0c0;
+}
+/* BreadCrumb */
+ul {
+  list-style: none;
+  padding: 10px 16px;
+}
+
+ul li {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+ul li:before {
+  padding: 8px;
+  color: rgb(75, 75, 75);
+  content: "/\00a0";
+}
+ul li:hover {
+  color: black;
+}
