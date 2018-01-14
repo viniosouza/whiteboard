@@ -23,7 +23,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <Route path="/" exact component={Home} />
-          <Route path="/job/:jobId" component={CompanyProfile} />
+          <Route path="/job/:jobId" exact component={CompanyProfile} />
         </div>
       </Router>
       // </Provider>
