@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #eaeff1;
+}
+.Home-page {
+  background: rgb(255, 255, 255);
+  width: 650px;
+  height: 600px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+}
+.Home-title {
+  align-self: center;
+  padding: 10px;
+  font-family: inherit;
+  font-style: normal;
+  color: #b2b6b8;
+}
+
+.Input-search[type="text"] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px;
+  border-radius: 60px;
+  font-size: 16px;
+  background-color: #e9eaec;
+  background-image: url("../../../img/search-icon.png");
+  background-position: 10px 17px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  outline: 0;
+}
+
+.Input-search[type="text"]:focus {
+  width: 100%;
+}
+
+.Home-Container-title {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.register-button {
+  padding: 10px;
+  border: 10px;
+  border-radius: 60px;
+  background-color: rgb(102, 105, 120);
+  color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 0;
+}
+th {
+  color: #66699a;
+  font-size: 13px;
+}
+
+td {
+  color: #b2b6b8;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(251, 251, 251);
+}
+
+.Home-Pagination {
+  display: flex;
+  justify-content: center;
+}
