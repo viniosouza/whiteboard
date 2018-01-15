@@ -1,0 +1,11 @@
+// Register
+export const REGISTER_COMPANY = "REGISTER_COMPANY";
+export const REGISTER_COMPANY_FAILED = "REGISTER_COMPANY_FAILED";
+
+// Search
+export const SET_SEARCH = "SET_SEARCH";
+export const SET_SEARCH_FAILED = "SET_SEARCH_FAILED";
+
+// CompanyDetails
+export const COMPANY_DETAILS = "COMPANY_DETAILS";
+export const COMPANY_DETAILS_FAILED = "COMPANY_DETAILS_FAILED";

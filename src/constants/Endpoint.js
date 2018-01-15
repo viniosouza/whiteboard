@@ -1,0 +1,1 @@
+export const ENDPOINT_URL = 'http://api-jobs.kevindantas.com';
