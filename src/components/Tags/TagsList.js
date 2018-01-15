@@ -3,19 +3,18 @@ import Tags from "./Tags";
 import "./styles/TagsList.css";
 
 function TagsList({ tags = [] }) {
-  //   if (tags.length < 1) {
-  //     return (
-  //       <div className="TagsList">
-  //         <h6>Não encontrado!</h6>
-  //       </div>
-  //     );
-  //   }
+    if (tags.length < 1) {
+      return (
+        <div className="TagsList">
+          <h6>Não encontrado!</h6>
+        </div>
+      );
+    }
   return (
     <div className="TagsList">
-      {/* {tags.map((Props, i) => {
-            return <Tags key={i} {...Props} />
-        })} */}
-      <Tags tags={tags} />
+      {tags.map((Props, i) => {
+        return <Tags key={i} {...Props} />;
+      })}
     </div>
   );
 }
