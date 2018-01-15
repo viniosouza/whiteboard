@@ -1,4 +1,4 @@
-.CompanyProfile-Container {
+.CompanyDetails-Container {
   width: 800px;
   height: 400px;
   margin: 0 auto;
@@ -6,31 +6,31 @@
   padding: 20px;
 }
 
-.CompanyProfile-Title {
+.CompanyDetails-Title {
   display: flex;
   justify-content: space-between;
 }
 
-.CompanyProfile-Description {
+.CompanyDetails-Description {
   padding: 20px;
   border-top: 1px solid #c1c0c0;
 }
 /* BreadCrumb */
-ul {
+.Breadcrumbs {
   list-style: none;
   padding: 10px 16px;
 }
 
-ul li {
+.Breadcrumbs li {
   display: inline-block;
   font-size: 1rem;
 }
 
-ul li:before {
+.Breadcrumbs li:before {
   padding: 8px;
   color: rgb(75, 75, 75);
   content: "/\00a0";
 }
-ul li:hover {
+.Breadcrumbs li:hover {
   color: black;
 }
