@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Modal from "../../components/Modal";
 import "./styles/Home.css";
-import { Pagination } from "antd";
-import * as SearchActions from "../../actions/SearchActions";
 import * as Api from "../../constants/Endpoint";
 import axios from "axios";
 import TableSearch from "../../components/TableSearch";
@@ -62,7 +60,6 @@ class Home extends Component {
 
   componentDidMount() {
     this.getSearch();
-    console.log(this);
   }
   toggleActive() {
     this.setState(state => ({ openModal: !state.openModal }));
@@ -225,10 +222,5 @@ class Home extends Component {
     );
   }
 }
-function mapStateToprops(state) {
-  console.log(state);
-  return {
-    total: state.search.data.totalCount
-  };
-}
+
 export default Home;

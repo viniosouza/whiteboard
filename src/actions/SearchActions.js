@@ -7,13 +7,6 @@ import {
   JOB_LIST_FAILED
 } from "../constants/ActionTypes";
 
-const config = {
-  headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json"
-  }
-};
-
 export const searchJob = pesquisa => dispatch =>
   axios
     .get(`${Api.ENDPOINT_URL}/jobs?q=${pesquisa}`)

@@ -3,17 +3,17 @@ import "./styles/CompanyDetails.css";
 import { TagsList } from "../Tags";
 import { CloseButton } from "../Button";
 import { Link } from "react-router-dom";
+import { Tag } from "antd";
 
 class CompanyDetails extends Component {
   render() {
     const {
-      id,
       name,
       url,
-      cities = [''],
-      countries = [''],
+      cities = [],
+      countries = [],
       process,
-      keywords = ['']
+      keywords = []
     } = this.props.infos;
 
   
@@ -38,14 +38,16 @@ class CompanyDetails extends Component {
               <span>COUNTRIES:</span>
               {/* TAGS */}
               <TagsList tags={cities} />
+              <p>{cities}</p>
               <span>CITIES:</span>
-              <TagsList tags={countries} />
-
-              {/* TAGS */}
+              <TagsList tags={cities} />
+              <p>{countries}</p>
             </div>
             <span>KEYWORDS:</span>
+            <p>{keywords}</p>
             {/* TAGS */}
             <TagsList tags={keywords} />
+            {/* <Tag color="#D3D4D8">{keywords}</Tag>; */}
           </div>
           <div className="CompanyDetails-Description">
             <p>{process}</p>

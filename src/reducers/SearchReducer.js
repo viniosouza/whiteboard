@@ -6,7 +6,6 @@ const initialState = {
 export default function searchReducer(state = initialState, action) {
   switch (action.payload) {
     case SET_SEARCH:
-      console.log(action.payload);
       return Object.assign({}, ...state, {
         data: action.payload.data
       });

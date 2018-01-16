@@ -23,7 +23,6 @@ class HomeContainer extends Component {
   }
 }
 function mapStateToProps(state) {
-  console.log(state);
   return {
     data: state.search.data
   };

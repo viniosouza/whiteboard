@@ -13,7 +13,6 @@ class CompanyDetailsContainer extends Component {
   }
 }
 function mapStateToProps(state) {
-  console.log(state);
   return {
     companyDetails: state.company.data
   };

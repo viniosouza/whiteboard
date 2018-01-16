@@ -13,7 +13,7 @@ function TagsList({ tags = [] }) {
   return (
     <div className="TagsList">
       {tags.map((Props, i) => {
-        return <Tags  {...Props} />;
+        return <Tags key={i.toString()} {...Props} />;
       })}
     </div>
   );
