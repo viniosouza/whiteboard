@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import Modal from "../../components/Modal";
 import "./styles/Home.css";
 import { Pagination } from "antd";
-
+import * as SearchActions from "../../actions/SearchActions";
+import * as Api from "../../constants/Endpoint";
+import axios from "axios";
+import TableSearch from "../../components/TableSearch";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -15,14 +18,46 @@ class Home extends Component {
       cities: "",
       countries: "",
       process: "",
-      keywords: ""
+      keywords: "",
+      data: [],
+      totalCount: ""
     };
+    this.updateSearch = this.updateSearch.bind(this);
+  }
+
+  updateSearch(data) {
+    this.setState({
+      data: data.data,
+      totalCount: data.totalCount
+    });
+  }
+
+  getSearch(page) {
+    const rand = Math.floor(Math.random() * 50 + 1);
+    return axios
+      .get(`${Api.ENDPOINT_URL}/jobs?_page=${rand}`)
+      .then(response => {
+        this.setState({
+          data: response.data.data,
+          totalCount: response.data.totalCount
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
+
+  componentDidMount() {
+    this.getSearch();
+    console.log(this);
   }
   toggleActive() {
     this.setState(state => ({ openModal: !state.openModal }));
   }
+
   render() {
-    const { id, name, url } = this.props.infos;
+    const { data } = this.state;
+
     return (
       <div className="Home">
         <div className="Home-Container-title">
@@ -150,28 +185,25 @@ class Home extends Component {
               if (e.target.value) this.props.updateSearch(e.target.value);
             }}
           />
-          <table>
-            <tbody>
-              <tr>
-                <th>NAME</th>
-                <th>WEBSITE</th>
-              </tr>
-              <tr>
-                <td>{name}</td>
-                <td>{url}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="Home-table">
+            {data.map((datas, i) => <TableSearch key={i} {...datas} />)}
+          </div>
           <div className="Home-Pagination">
             <Pagination
-              onChange={this.onChange}
-              defaultCurrent={this.props.total}
-              total={this.props.total}
+              onChange={() => this.getSearch()}
+              defaultCurrent={this.state.totalCount}
+              total={this.state.totalCount}
             />
           </div>
         </div>
       </div>
     );
   }
+}
+function mapStateToprops(state) {
+  console.log(state);
+  return {
+    total: state.search.data.totalCount
+  };
 }
 export default Home;

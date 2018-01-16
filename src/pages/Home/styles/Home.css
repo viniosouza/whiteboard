@@ -6,10 +6,13 @@ body {
 .Home-page {
   background: rgb(255, 255, 255);
   width: 650px;
-  height: 600px;
   margin: 0 auto;
   box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.2);
   padding: 30px;
+}
+
+.Home-page .Home-table {
+  height: 484px;
 }
 .Home-title {
   align-self: center;
@@ -56,29 +59,7 @@ body {
   font-weight: 600;
 }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-  border-spacing: 0;
-}
-th {
-  color: #66699a;
-  font-size: 13px;
-}
 
-td {
-  color: #b2b6b8;
-}
-
-th,
-td {
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: rgb(251, 251, 251);
-}
 
 .Home-Pagination {
   display: flex;

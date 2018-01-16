@@ -8,14 +8,13 @@ import { composeWithDevTools } from "redux-devtools-extension/logOnlyInProductio
 import HomeContainer from "./containers/HomeContainer";
 import CompanyDetailsContainer from "./containers/CompanyDetailsContainer";
 import "antd/dist/antd.css";
-
+import $ from "jquery";
 const componseEnhancers = composeWithDevTools({});
 
 const store = createStore(
   reducers,
   /* preloadedState, */ componseEnhancers(applyMiddleware(thunk))
 );
-
 class App extends Component {
   render() {
     return (

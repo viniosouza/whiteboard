@@ -1,6 +1,11 @@
 import * as Api from "../constants/Endpoint";
 import axios from "axios";
-import { SET_SEARCH, SET_SEARCH_FAILED } from "../constants/ActionTypes";
+import {
+  SET_SEARCH,
+  SET_SEARCH_FAILED,
+  JOB_LIST,
+  JOB_LIST_FAILED
+} from "../constants/ActionTypes";
 
 const config = {
   headers: {
@@ -21,6 +26,22 @@ export const searchJob = pesquisa => dispatch =>
     .catch(error =>
       dispatch({
         type: SET_SEARCH_FAILED,
+        payload: error
+      })
+    );
+
+export const JobList = page => dispatch =>
+  axios
+    .get(`${Api.ENDPOINT_URL}/jobs?_page=${page}`)
+    .then(response => {
+      return dispatch({
+        type: JOB_LIST,
+        payload: response.data
+      });
+    })
+    .catch(error =>
+      dispatch({
+        type: JOB_LIST_FAILED,
         payload: error
       })
     );

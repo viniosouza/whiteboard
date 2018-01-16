@@ -1,9 +1,9 @@
 .CompanyDetails-Container {
-  width: 800px;
-  height: 400px;
+  width: 700px;
+  height: 500px;
   margin: 0 auto;
   box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.2);
-  padding: 20px;
+  padding: 30px;
 }
 
 .CompanyDetails-Title {
@@ -15,10 +15,15 @@
   padding: 20px;
   border-top: 1px solid #c1c0c0;
 }
+
+.CompanyDetails-Details {
+  padding: 10px;
+}
 /* BreadCrumb */
 .Breadcrumbs {
   list-style: none;
   padding: 10px 16px;
+  margin: 20px;
 }
 
 .Breadcrumbs li {

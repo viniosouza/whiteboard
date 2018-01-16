@@ -17,10 +17,11 @@ class HomeContainer extends Component {
   render() {
     return (
       <Home
+        data={this.props.data}
         infos={this.props.data}
         updateSearch={this.updateSearch.bind(this)}
-        total={this.props.totalCount}
         registerCompany={this.registerCompany.bind(this)}
+        onChange={this.updateSearch.bind(this)}
       />
     );
   }
@@ -28,8 +29,7 @@ class HomeContainer extends Component {
 function mapStateToProps(state) {
   console.log(state);
   return {
-    data: state.search.data,
-    totalCount: state.search.data
+    data: state.search.data
   };
 }
 export default connect(mapStateToProps)(HomeContainer);
