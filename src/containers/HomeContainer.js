@@ -5,14 +5,12 @@ import * as RegisterActions from "../actions/RegisterActions";
 import Home from "../pages/Home";
 
 class HomeContainer extends Component {
-  // updateSearchJob(pesquisa) {
-  //   this.props.dispatch(SearchActions.searchJob(pesquisa));
-  // }
-
   registerCompany(registerCompanyInfo) {
-    return this.props.dispatch(
-      RegisterActions.registerCompany(registerCompanyInfo)
-    );
+    return this.props
+      .dispatch(RegisterActions.registerCompany(registerCompanyInfo))
+      .then(() => {
+        this.props.dispatch(SearchActions.JobList());
+      });
   }
   render() {
     return (

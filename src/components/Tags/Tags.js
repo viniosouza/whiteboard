@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./styles/Tags.css";
 
-const Tags = ({ name, color }) => {
+const Tags = ({ name = [], color }) => {
   const attributes = {
     className: "Tags",
     style: { color }

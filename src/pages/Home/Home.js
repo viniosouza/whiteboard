@@ -176,7 +176,7 @@ class Home extends Component {
                   };
 
                   this.props.registerCompany(registerCompanyInfo);
-                  window.relod();
+                  this.toggleActive();
                 }}
               >
                 REGISTER

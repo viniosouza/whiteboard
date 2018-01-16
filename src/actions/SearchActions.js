@@ -30,9 +30,9 @@ export const searchJob = pesquisa => dispatch =>
       })
     );
 
-export const JobList = page => dispatch =>
+export const JobList = () => dispatch =>
   axios
-    .get(`${Api.ENDPOINT_URL}/jobs?_page=${page}`)
+    .get(`${Api.ENDPOINT_URL}/jobs`)
     .then(response => {
       return dispatch({
         type: JOB_LIST,

@@ -10,12 +10,13 @@ class CompanyDetails extends Component {
       id,
       name,
       url,
-      cities = [],
-      countries = [],
+      cities = [''],
+      countries = [''],
       process,
-      keywords = []
+      keywords = ['']
     } = this.props.infos;
 
+  
     return (
       <div className="CompanyDetails">
         {/* BreadCrumbs */}

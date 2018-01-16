@@ -24,6 +24,7 @@
   list-style: none;
   padding: 10px 16px;
   margin: 20px;
+  margin-left: 300px;
 }
 
 .Breadcrumbs li {
@@ -38,4 +39,11 @@
 }
 .Breadcrumbs li:hover {
   color: black;
+}
+
+.Breadcrumbs li a {
+  color: inherit;
+}
+span{
+  font-family: fantasy
 }
