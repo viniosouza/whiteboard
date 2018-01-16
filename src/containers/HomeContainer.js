@@ -5,9 +5,9 @@ import * as RegisterActions from "../actions/RegisterActions";
 import Home from "../pages/Home";
 
 class HomeContainer extends Component {
-  updateSearch(pesquisa) {
-    this.props.dispatch(SearchActions.searchJob(pesquisa));
-  }
+  // updateSearchJob(pesquisa) {
+  //   this.props.dispatch(SearchActions.searchJob(pesquisa));
+  // }
 
   registerCompany(registerCompanyInfo) {
     return this.props.dispatch(
@@ -19,9 +19,7 @@ class HomeContainer extends Component {
       <Home
         data={this.props.data}
         infos={this.props.data}
-        updateSearch={this.updateSearch.bind(this)}
         registerCompany={this.registerCompany.bind(this)}
-        onChange={this.updateSearch.bind(this)}
       />
     );
   }

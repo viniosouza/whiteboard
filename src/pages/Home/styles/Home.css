@@ -11,9 +11,6 @@ body {
   padding: 30px;
 }
 
-.Home-page .Home-table {
-  height: 484px;
-}
 .Home-title {
   align-self: center;
   padding: 10px;
@@ -59,8 +56,11 @@ body {
   font-weight: 600;
 }
 
-
-
+.Home-Table-title {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
 .Home-Pagination {
   display: flex;
   justify-content: center;

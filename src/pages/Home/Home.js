@@ -25,6 +25,20 @@ class Home extends Component {
     this.updateSearch = this.updateSearch.bind(this);
   }
 
+  updateSearchJob(pesquisa) {
+    return axios
+      .get(`${Api.ENDPOINT_URL}/jobs?q=${pesquisa}`)
+      .then(response => {
+        this.setState({
+          data: response.data.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+    this.getSearch();
+  }
+
   updateSearch(data) {
     this.setState({
       data: data.data,
@@ -33,9 +47,8 @@ class Home extends Component {
   }
 
   getSearch(page) {
-    const rand = Math.floor(Math.random() * 50 + 1);
     return axios
-      .get(`${Api.ENDPOINT_URL}/jobs?_page=${rand}`)
+      .get(`${Api.ENDPOINT_URL}/jobs`)
       .then(response => {
         this.setState({
           data: response.data.data,
@@ -163,7 +176,7 @@ class Home extends Component {
                   };
 
                   this.props.registerCompany(registerCompanyInfo);
-                  this.toggleActive();
+                  window.relod();
                 }}
               >
                 REGISTER
@@ -182,19 +195,31 @@ class Home extends Component {
             }}
             onChange={e => {
               e.preventDefault();
-              if (e.target.value) this.props.updateSearch(e.target.value);
+              if (e.target.value) this.updateSearchJob(e.target.value);
             }}
           />
           <div className="Home-table">
+            <div className="Home-Table-title">
+              <table>
+                <tbody>
+                  <tr>
+                    <th>NAME</th>
+                    <th>WEBSITE</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             {data.map((datas, i) => <TableSearch key={i} {...datas} />)}
           </div>
-          <div className="Home-Pagination">
+
+          {/* I didn't  get  implement ;( I tried, forgive me, I failed */}
+          {/* <div className="Home-Pagination">
             <Pagination
               onChange={() => this.getSearch()}
               defaultCurrent={this.state.totalCount}
               total={this.state.totalCount}
             />
-          </div>
+          </div> */}
         </div>
       </div>
     );
